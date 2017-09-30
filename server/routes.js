@@ -8,7 +8,5 @@ module.exports = (app) => {
     res.sendFile(path.resolve(__dirname + '/../client/public/index.html'));
   };
 
-  app.get('/', (req, res) => {
-    res.send('ok');
-  });
-};
+  app.get('/', sendFile);
+}
