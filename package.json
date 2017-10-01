@@ -4,8 +4,12 @@
   "description": "Messing around with React and Node to make a crappy html based rpg",
   "main": "index.js",
   "scripts": {
-    "test": "node test",
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "build": "npm run build:dev",
+    "build:dev": "webpack --watch -d",
+    "build:prod": "webpack",
+    "postinstall": "npm run build:prod",
+    "test": "node server/index.js & mocha --bail --reporter nyan test/server-test/ServerSpec.js; pkill -n node; live-server --open=./test/client-test/SpecRunner.html --port=8081"
   },
   "repository": {
     "type": "git",

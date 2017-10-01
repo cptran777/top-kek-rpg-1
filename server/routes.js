@@ -9,4 +9,8 @@ module.exports = (app) => {
   };
 
   app.get('/', sendFile);
+
+  app.get('/test', (req, res) => {
+    res.send('ok');
+  });
 }
