@@ -1,10 +1,9 @@
 // React imports
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, 
+import { BrowserRouter as Router, 
          Route, 
-         IndexRoute, 
-         browserHistory } from 'react-router';
+         Link } from 'react-router-dom';
 // Redux imports
 import { Provider } from 'react-redux';
 import configureStore from './store/configStore';
@@ -17,10 +16,10 @@ const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory}>
-      <Route path="/" component={App}>
-        <IndexRoute component={App} />
-      </Route>
+    <Router>
+      <div>
+        <Route path="/" component={App} />
+      </div>
     </Router>
   </Provider>,
   document.getElementById('app')

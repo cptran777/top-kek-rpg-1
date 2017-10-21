@@ -3,7 +3,7 @@ import React from 'react';
 // Redux imports
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-// import * as Actions from '../actions/index.js';
+import * as Actions from '../actions/index.js';
 
 /**
  * The App class acts as the main container to store what the user will view as the
