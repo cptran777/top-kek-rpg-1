@@ -43,7 +43,7 @@ const mapStateToProps = (state) => {
  * @param  {Function} dispatch - function that a sends an action to the redux state
  * @return {Object}            - the object that contains the functions to dispatch actions
  */
-const mapDispatchToProp = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     // To uncomment once actions actually exist
     actions: bindActionCreators(Actions, dispatch)

@@ -14,34 +14,20 @@ module.exports = {
     path: PATHS.compiled,
     filename: 'app.bundle.js'
   },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
-        //exclude: /scripts/,
-        include: __dirname + '/client/src',
         loader: 'babel-loader',
+        exclude: /node_modules/,
         query: {
+          cacheDirectory: true,
           presets: ['react', 'es2015']
         }
       }
     ]
-  },
-  resolveLoaders: {
-    modulesDirectories: ['node_modules']
-  },
-  resolve: { // in import statements default to these file types if none specified
-    extensions: ['', '.js', '.jsx'],
-    modulesDirectories: ['node_modules']
-  },
-  devServer: {
-    contentBase: PATHS.compiled,
-    historyApiFallback: true,
-    hot: true,
-    inline: true,
-    progress: true
-  },
-  plugins: [
-    // new webpack.HotModuleReplacementPlugin()
-  ]
+  }
 };
